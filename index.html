@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GameZone — a futuristic collection of quick browser games.">
+  <title>GameZone — Play. Think. Repeat.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="GameZone home"><span class="brand-mark">G</span> GAME<span>ZONE</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="mainNav">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#games" class="nav-link">Games</a>
+      <a href="#leaderboard" class="nav-link">Leaderboard</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#developer" class="nav-link">Developer</a>
+    </nav>
+    <a class="nav-cta" href="#games">Start playing <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> YOUR NEXT PLAYGROUND</div>
+        <h1>Level up your<br><span class="gradient-text">free time.</span></h1>
+        <p class="hero-description">A little challenge. A lot of fun. Explore quick games designed to test your focus, memory and strategy.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#games">Explore games <span>→</span></a>
+          <a class="button button-quiet" href="#about">Discover GameZone</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>04</strong><span>Mini games</span></div>
+          <div><strong>∞</strong><span>Ways to play</span></div>
+          <div><strong>100%</strong><span>Browser based</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Decorative gaming illustration">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="hero-core"><span class="core-symbol">✦</span><span class="core-label">READY<br>PLAYER</span></div>
+        <div class="float-chip chip-one">⚡ QUICK PLAY</div>
+        <div class="float-chip chip-two">◎ YOUR SCORE</div>
+        <div class="float-chip chip-three">✧ GOOD VIBES</div>
+      </div>
+    </section>
+
+    <section class="section-wrap games-section" id="games">
+      <div class="section-heading">
+        <div><div class="eyebrow">PICK YOUR CHALLENGE</div><h2>Choose your <span class="gradient-text">game.</span></h2></div>
+        <div class="game-tools"><label class="search-box"><span>⌕</span><input id="gameSearch" type="search" placeholder="Search games..." aria-label="Search games"></label></div>
+      </div>
+      <div class="filter-row" role="group" aria-label="Filter games">
+        <button class="filter-chip selected" data-filter="all">All games <span>04</span></button>
+        <button class="filter-chip" data-filter="strategy">Strategy</button>
+        <button class="filter-chip" data-filter="brain">Brain</button>
+        <button class="filter-chip" data-filter="quick">Quick play</button>
+      </div>
+      <div class="game-grid" id="gameGrid">
+        <article class="game-card" data-category="strategy" data-name="tic tac toe">
+          <div class="game-visual visual-tic"><span class="tic-x">×</span><span class="tic-o">○</span><span class="tic-x">×</span><span class="tic-o">○</span><span class="tic-x">×</span><span class="tic-o">○</span><span class="tic-o">○</span><span class="tic-x">×</span><span class="tic-x">×</span></div>
+          <div class="card-meta"><span class="tag">STRATEGY</span><span class="game-number">01 / 04</span></div>
+          <h3>Tic-Tac-Toe</h3><p>Think ahead. Make your move. Get three in a row.</p>
+          <button class="play-link" data-game="tic">Play game <span>↗</span></button>
+        </article>
+        <article class="game-card" data-category="brain" data-name="memory match">
+          <div class="game-visual visual-memory"><span>✦</span><span>◈</span><span>✿</span><span>?</span></div>
+          <div class="card-meta"><span class="tag">BRAIN</span><span class="game-number">02 / 04</span></div>
+          <h3>Memory Match</h3><p>Flip the cards and find every matching pair.</p>
+          <button class="play-link" data-game="memory">Play game <span>↗</span></button>
+        </article>
+        <article class="game-card" data-category="brain" data-name="number guess">
+          <div class="game-visual visual-number"><span class="number-orb">?</span><span class="number-caption">GUESS THE NUMBER</span></div>
+          <div class="card-meta"><span class="tag">BRAIN</span><span class="game-number">03 / 04</span></div>
+          <h3>Number Guess</h3><p>Can you find the secret number in limited tries?</p>
+          <button class="play-link" data-game="number">Play game <span>↗</span></button>
+        </article>
+        <article class="game-card" data-category="quick" data-name="rock paper scissors">
+          <div class="game-visual visual-rps"><span>✊</span><span>✋</span><span>✌</span></div>
+          <div class="card-meta"><span class="tag">QUICK PLAY</span><span class="game-number">04 / 04</span></div>
+          <h3>Rock Paper Scissors</h3><p>Make your choice and take on the computer.</p>
+          <button class="play-link" data-game="rps">Play game <span>↗</span></button>
+        </article>
+      </div>
+      <p class="empty-state hidden" id="emptyState">No games found. Try another search.</p>
+    </section>
+
+    <section class="section-wrap game-stage-section hidden" id="gameStage">
+      <div class="section-heading stage-heading">
+        <div><div class="eyebrow">GAME IN PROGRESS</div><h2 id="stageTitle">Tic-Tac-Toe</h2></div>
+        <button class="button button-quiet back-button" id="backToGames">← Back to games</button>
+      </div>
+      <div class="game-panel">
+        <div class="game-panel-top"><span class="panel-indicator"><span class="live-dot"></span> LIVE SESSION</span><span id="gameStatus" aria-live="polite">Your turn</span></div>
+        <div id="gameContent"></div>
+      </div>
+    </section>
+
+    <section class="section-wrap leaderboard-section" id="leaderboard">
+      <div class="section-heading">
+        <div><div class="eyebrow">YOUR PERSONAL RECORDS</div><h2>Hall of <span class="gradient-text">fame.</span></h2></div>
+        <button class="text-button" id="resetScores">Reset records ↺</button>
+      </div>
+      <div class="leaderboard-card">
+        <div class="leaderboard-intro"><div class="leader-icon">✧</div><div><h3>Top scores</h3><p>Your best results on this device.</p></div></div>
+        <div class="score-list" id="scoreList"></div>
+        <p class="storage-note">✦ Scores are saved locally in this browser using localStorage.</p>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="section-wrap about-inner">
+        <div><div class="eyebrow">A SMALL SPACE FOR BIG FUN</div><h2>Play a little.<br><span class="gradient-text">Think a lot.</span></h2></div>
+        <div class="about-copy"><p>GameZone is a mini gaming hub built with HTML, CSS and JavaScript. Each game is designed to be simple to start, fun to replay and easy to enjoy on any screen.</p><p class="about-note">Designed and developed as a front-end web project.</p></div>
+      </div>
+    </section>
+
+    <section class="section-wrap developer-section" id="developer">
+      <div class="section-heading">
+        <div><div class="eyebrow">THE PERSON BEHIND THE PIXELS</div><h2>Meet the <span class="gradient-text">developer.</span></h2></div>
+      </div>
+      <div class="developer-card">
+        <div class="developer-avatar">GZ</div>
+        <div class="developer-details">
+          <h3>Anushka Wandhare</h3>
+          <p class="developer-role">Student · Aspiring Web Developer</p>
+          <p>I'm learning to turn ideas into interactive digital experiences. GameZone is a front-end project built to explore web design, JavaScript logic and responsive development.</p>
+          <div class="skill-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>UI Design</span></div>
+          <p class="developer-contact">Contact: <a href="mailto:your.email@example.com">anushkawandhare07@gmail.com</a> · GitHub: <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">anushka0704-bp</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer section-wrap"><a class="brand" href="#home"><span class="brand-mark">G</span> GAME<span>ZONE</span></a><p>Made for curious minds. © <span id="year"></span> GameZone.</p><a href="#home" class="back-top">Back to top ↑</a></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
